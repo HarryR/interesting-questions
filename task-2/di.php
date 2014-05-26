@@ -90,7 +90,7 @@ class DI_Exception extends Exception {}
  *      function deleteme () {
  *        if( $this->_user != NULL ) {
  *          assert( $this->db != NULL );
- *          $stmt = $db->prepare("DELETE * FROM users WHERE id = ?");
+ *          $stmt = $this->db->prepare("DELETE FROM users WHERE id = ?");
  *          $stmt->execute( [$this->_user->id] );
  *        }
  *      }
