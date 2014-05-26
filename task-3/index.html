@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>Task 3</title>
+	</head>
+
+	<body>
+		<p>
+		Given the following HTML, use the most recent version of jQuery to add the <code>target="_blank"</code> attribute to every anchor tag.
+		</p>
+
+		<hr />
+
+		<div id="content">
+		   <p>
+		       <a href="http://google.com">Google</a>
+		   </p>
+		   <p>
+		       <a href="http://yahoo.com">Yahoo</a>
+		   </p>
+		</div>
+
+		<hr />
+		Test results: <span id="test-results">UNKNOWN</span><br />
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+(function($){
+	$(function(){
+		var $content = $("#content");
+		var $the_links = $("a", $content);
+		var $test_results = $('#test-results');
+		var links_changed = 0;		
+
+		$the_links.attr("target", "_blank");
+		$.each($the_links, function (idx, el) {
+			if( $(el).attr("target") == "_blank" ) {
+				links_changed += 1;
+			}
+		});
+
+		if( links_changed == $the_links.length ) {
+			$test_results.css('color', 'green').text('SUCCESS');
+		}
+		else {
+			$test_results.css('color', 'red').text('FAIL');
+		}
+	});
+})(jQuery);
+</script>
+
+	</body>
+</html>
