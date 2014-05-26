@@ -80,5 +80,5 @@ CREATE TABLE `members` (
 ```
 
 ```sql
-SELECT username FROM members ORDER BY login_count DESC
+SELECT id, username FROM members ORDER BY login_count DESC
 ```
